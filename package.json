@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "stylelint": "stylelint \"**/*.scss\""
+    "stylelint": "stylelint \"**/*.scss\"",
+    "prepare": "husky install"
   },
   "repositor": {
     "type": "git",
@@ -33,7 +34,10 @@
     "eslint": "^8",
     "eslint-config-next": "14.0.3",
     "eslint-plugin-simple-import-sort": "^10.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.1.0",
     "postcss": "^8.4.31",
+    "prettier": "^3.1.0",
     "sass": "^1.69.5",
     "stylelint": "^15.11.0",
     "stylelint-config-sass-guidelines": "^10.0.0",
@@ -41,5 +45,15 @@
     "stylelint-config-standard-scss": "^11.1.0",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
+  },
+  "husky":{
+    "hooks":{
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*": "prettier--write",
+    "*{.js,ts,tsx}": "eslint --cache --fix",
+    "*.scss": "stylelint --fix"
   }
 }
