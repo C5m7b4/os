@@ -1,3 +1,9 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "max-lines": ["error", 80],
+    "simple-import-sort/exports": "error",
+    "simple-import-sort/imports": "error"
+  },
+  "plugins": ["simple-import-sort"]
 }
