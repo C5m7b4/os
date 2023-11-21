@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "next lint",
     "stylelint": "stylelint \"**/*.scss\"",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "prettier": "prettier --write"
   },
   "repositor": {
     "type": "git",
@@ -52,7 +53,6 @@
     }
   },
   "lint-staged": {
-    "*": "prettier--write",
     "*{.js,ts,tsx}": "eslint --cache --fix",
     "*.scss": "stylelint --fix"
   }
